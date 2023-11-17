@@ -10,3 +10,7 @@ function dd($data) {
     print_r($data);
     exit();
 }
+function redirect($path){
+    header('Location:'.url($path));
+    exit();
+}

@@ -17,7 +17,7 @@ include(path('pages/inc/header.php'));
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label text-white">Email address</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <input name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPhone1" class="form-label text-white">Phone</label>
