@@ -17,6 +17,9 @@ class Database{
     public function query($query) {
         return $this->conn->query($query);
     }
+    public function affected(){
+        return $this->conn->affected_rows;
+    }
     private function connect() {
         $this->conn = new mysqli($this->hostname, $this->username, $this->password, $this->database);
             if(!$this->conn) {

@@ -1,4 +1,6 @@
 <?php
+
+use App\Classes\Student;
 use App\Helpers\ErrorsBag;
 use App\Helpers\Request;
 use App\Helpers\Session;
@@ -38,8 +40,21 @@ if (Request::isPost()){
         Session::set('errors', $errors->all());
         redirect('pages/students/create.php');
     } else {
-        Session::set('success', "Student Added Successfully");
-        redirect('pages/students/create.php');
+        $data = [
+            "name"=>$name,
+            "email"=>$email,
+            "phone"=>$phone,
+            "address"=>$address
+        ];
+        if(Student::create($data)){
+            Session::set('success', "Student Added Successfully");
+            redirect('pages/students/create.php');
+        }
+        else {
+            $errors->add("Something Went Wrong");
+            Session::set('errors', $errors->all());
+            redirect('pages/students/create.php');
+        }
     }
     
 }
