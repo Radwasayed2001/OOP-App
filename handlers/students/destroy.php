@@ -22,7 +22,7 @@ if (Request::isGET()){
         }
     }
     else {
-        Session::set('errors', "Missing id form url");
+        Session::set('errors', ["Missing id form url"]);
         redirect('pages/students/index.php');
     }
      
